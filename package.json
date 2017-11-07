@@ -1,0 +1,30 @@
+{
+    "name": "hyperapp-persist-state",
+    "description": "Persist an app's state to the next session",
+    "author": "Abhishek Saha",
+    "repository": "ajaxtown/hyperapp-persist-state",
+    "version": "1.0.0",
+    "license": "MIT",
+    "keywords": ["hyperapp", "plugin", "persist", "state", "save", "session", "localstorage"],
+    "main": "dist/app.js",
+    "module": "src/index.js",
+    "scripts": {
+        "test": "jest --coverage --no-cache",
+        "build": "npm run bundle && npm run minify",
+        "bundle": "rollup -i src/index.js -o dist/hyperapp-persist-state.js -f umd -mn hyperappPersistState",
+        "minify": "uglifyjs dist/hyperapp-persist-state.js -o dist/hyperapp-persist-state.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty --source-map \"filename='dist/hyperapp-persist-state.js.map'\"",
+        "prepublish": "npm run build",
+        "format": "prettier --semi false --write 'src/**/*.js'",
+        "release": "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    },
+    "devDependencies": {
+        "jest": "^21.0.2",
+        "prettier": "~1.7.0",
+        "rollup": "^0.50.0",
+        "rollup-plugin-babel": "^3.0.2",
+        "uglify-js": "^3.1.0"
+    },
+    "peerDependencies": {
+        "hyperapp": "^0.16.0"
+    }
+}
