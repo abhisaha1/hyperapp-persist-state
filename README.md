@@ -18,11 +18,13 @@ const options = {
     view
 };
 // Wrap the options inside persist
-const appActions = app(persist(options),{
-    storage: 'localStorage',
-    clearPast: true,
-    version: 1
-});
+const appActions = app(
+    persist(options, {
+        storage: "localStorage",
+        clearPast: true,
+        version: 1
+    })
+);
 appActions.__initPersist();
 ```
 
