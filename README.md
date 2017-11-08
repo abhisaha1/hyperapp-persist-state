@@ -5,10 +5,10 @@ This library is a High Order App which encapsulates your [Hyperapp](https://gith
 
 # Install
 ```
-npm i hyperapp-persist-state
+npm i hyperapp-persist-state --save
 ```
 # Usage
-```
+```js
 import { app } from "hyperapp";
 import persist from "./lib/persist";
 
