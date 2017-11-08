@@ -29,22 +29,22 @@ appActions.__initPersist();
 ```
 
 ## Options
-#### `storage - {string} (optional) | Default: localStorage`
+##### `storage - {string} (optional) | Default: localStorage`
 
 Uses localStorage to save the state
 
-### `version - {int} (optional) | Default: 1`
+##### `version - {int} (optional) | Default: 1`
 
 When there are breaking changes in the state, increament the version number. This will remove the old state and initialize the storage with the new state.
 
-#### `clearPast - {bool} (optional) | Default: true`
+##### `clearPast - {bool} (optional) | Default: true`
 
 If this is false, it will keep the old states in the storage.
 
 The states are stored in the format `app-state-v-{version}`.
 
 ## Deactivate
-#### `actions.__removePersist()`
+##### `actions.__removePersist()`
 This will clear the data from the store and deactivate persistance.
 
 ## Todo
